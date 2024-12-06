@@ -20,6 +20,11 @@ app.use("/api/auth/employee", employeeAuthRoutes); //done
 app.use("/api/admin", adminDashboardRoutes);
 app.use("/api/employee", employeeRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json("Server is Running....Home Route");
+});
+
+
 // >>=======Start the server ===========>>
 app.listen(process.env.PORT, () =>
   console.log(`Server running on port http://localhost:${process.env.PORT}`)
